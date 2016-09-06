@@ -3,8 +3,7 @@
 pkgname=ossp-uuid
 pkgver=1.6.2
 pkgrel=0
-pkgdesc="OSSP uuid is a ISO-C:1999 application programming interface (API) and corresponding command line interface (CLI) for the generation of DCE 1.1, ISO/IEC 11578:1996 and RFC 4122 compliant Universal
-url="http://www.ossp.org/pkg/lib/uuid/"
+pkgdesc="OSSP uuid"
 arch="all"
 license=""
 depends=""

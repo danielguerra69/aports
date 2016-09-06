@@ -1,4 +1,4 @@
-# Contributor: Carlo Landmeter <clandmeter@gmail.com>
+# Contributor: Carlo Landmeter <clandmeter@gmail.com>, Daniel Guerra <daniel.guerra69@gmail.com>
 # Maintainer:
 pkgname=x11vnc
 pkgver=0.9.13
@@ -9,7 +9,7 @@ arch="all"
 license="GPL2"
 depends=""
 depends_dev="openssl-dev libjpeg-turbo-dev libxtst-dev libxinerama-dev libxdamage-dev
-	libxrandr-dev avahi-dev ossp-uuid"
+	libxrandr-dev avahi-dev ossp-uuid-dev"
 makedepends="$depends_dev"
 install=""
 subpackages="$pkgname-dev $pkgname-doc"
@@ -30,8 +30,6 @@ prepare() {
 build() {
 	cd "$_builddir"
 	./configure \
-		--build=x86_64 \
-		--host=$CHOST \
 		--prefix=/usr \
 		--sysconfdir=/etc \
 		--mandir=/usr/share/man \

@@ -31,10 +31,7 @@ prepare() {
 
 build() {
 	cd "$builddir"
-  	./configure  --prefix=/usr \
-                --disable-broctl \
-                --disable-broccoli \
-                --disable-auxtools  || return 1
+  	./configure --prefix=/usr|| return 1
 	make || return 1
 }
 

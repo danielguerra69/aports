@@ -1,15 +1,16 @@
 # Contributor: Daniel Guerra <daniel.guerra69@gmail.com>
-# Maintainer: Daniel Guerra
+# Maintainer:
 pkgname=ossp-uuid
 pkgver=1.6.2
 pkgrel=0
 pkgdesc="OSSP uuid"
 arch="all"
-license=""
+license="GPL"
 depends=""
 depends_dev=""
 makedepends="$depends_dev"
 install=""
+url="http://www.ossp.org/pkg/lib/uuid/"
 subpackages="$pkgname-dev $pkgname-doc"
 source="ftp://ftp.ossp.org/pkg/lib/uuid/uuid-1.6.2.tar.gz"
 

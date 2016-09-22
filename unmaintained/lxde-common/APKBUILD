@@ -1,4 +1,4 @@
-# Maintainer:  Bartłomiej Piotrowski <nospam@bpiotrowski.pl>
+# Maintainer:  Bartomiej Piotrowski <nospam@bpiotrowski.pl>
 
 pkgname=lxde-common
 pkgver=0.5.5
@@ -6,6 +6,7 @@ pkgrel=0
 pkgdesc='Common files of the LXDE Desktop'
 arch='noarch'
 url='http://lxde.org/'
+subpackages="$pkgname-doc"
 license='GPL2'
 depends='lxsession'
 source="http://downloads.sourceforge.net/lxde/${pkgname}-${pkgver}.tar.gz

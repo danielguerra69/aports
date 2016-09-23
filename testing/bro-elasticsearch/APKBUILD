@@ -1,6 +1,6 @@
 # Contributor: Daniel Guerra <daniel.guerra69@gmail.com>
 # Maintainer:
-pkgname=bro
+pkgname=bro-elasticsearch
 pkgver=2.4.1
 pkgrel=0
 pkgdesc="bro ids 2.4.1 with elasticsearch plugin"

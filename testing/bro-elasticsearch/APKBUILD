@@ -12,7 +12,7 @@ depends_dev="bash swig git perl cmake make zlib-dev openssl-dev flex bison pytho
 makedepends="$depends_dev"
 install=""
 subpackages="$pkgname-dev $pkgname-doc"
-source="https://www.bro.org/downloads/bro-$pkgver.tar.gz bro-musl.patch binpac-musl.patch FindFTS.cmake"
+source="https://www.bro.org/downloads/bro-$pkgver.tar.gz bro-musl.patch binpac-musl.patch FindFTS.cmake bro-2.4.1.patch"
 builddir="$srcdir/bro-$pkgver"
 
 prepare() {
@@ -42,14 +42,17 @@ package() {
 }
 
 md5sums="353e79df458e2bbfa00bdbaa0f183908  bro-2.4.1.tar.gz
+cf671d7df88d1d454c68723c912ba463  bro-2.4.1.patch
 0dc4dbd0e5ba90d13859fb54d5aeba58  bro-musl.patch
 f8fbba6ced1f0c9e82e4c588e9362e9e  binpac-musl.patch
 9855bbbc59396c75ea7d909e39a0d3e7  FindFTS.cmake"
 sha256sums="d8b99673a5024630f6bae820c4f8c3ca9029f1167f9e5729c914c66e1fc7c8f6  bro-2.4.1.tar.gz
+6b0a6fffddf7037704c9b6690e4375db866408877799b7f6908c2cd94c52aa14  bro-2.4.1.patch
 8a1a156f47193a14c29ad12240372358bf399c4ca4ad9eebce57bc605490f294  bro-musl.patch
 aac418b1c9140cf6d4b0e1585c0fe7d3496027a6efa6cbe7aa4c2510c0e8971d  binpac-musl.patch
 5a3feb47dbd41bb469540643b3f9c735df174f9f72841f0cdff40073b6a8864a  FindFTS.cmake"
 sha512sums="4f7bf6c037fe7b16214830d2dba9f7abffd853f66030aa710fb9f174a475f8cd27d8de6bacf965f142f942a42093ceb78dcd8cbcedac6fbcfdd65ac07b3dd410  bro-2.4.1.tar.gz
+cedac1085346c1130dce1139b6d1f181914f6aa42a26d7bccaaefa0d47c2f81e454bc806a7915b4e9eeb9ac15438785a361183855eb5c7cdd10b6056e3bee5a1  bro-2.4.1.patch
 0e9b814bee449c978513becb521dd6b4af86540f1cc3bbd3eae86719189be833dedd9473b62eab8c6e814835fb2a33f86b97c844fd5596aaa31a23752e190ca5  bro-musl.patch
 f6776551a432260bb7929ec7b53c6cb2581e440d749a2d60d8339461a27c2af5dd2057341a23af115a5ec38918d3e3c093b33e986661a1d822d9b04064a7012c  binpac-musl.patch
 bc416666de10b23f484ccb9f3966c2867b6db42c2b3374c790dd47ed1668959eda7f1abfc47ec8669dc4b70d19be6a1723aef13cb20057304b68e601ea322db5  FindFTS.cmake"

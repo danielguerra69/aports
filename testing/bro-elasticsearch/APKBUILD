@@ -32,7 +32,10 @@ prepare() {
 
 build() {
 	cd "$builddir"
-  	./configure --prefix=/usr --disable-broker || return 1
+  ./configure --prefix=/usr --disable-broker || return 1
+	make || return 1
+	cd "$builddir/aux/plugins/elasticsearch"
+	./configure --prefix=/usr --disable-broker || return 1
 	make || return 1
 }
 

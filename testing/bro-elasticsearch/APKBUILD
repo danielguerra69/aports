@@ -1,7 +1,7 @@
 # Contributor: Daniel Guerra <daniel.guerra69@gmail.com>
 # Maintainer:
 pkgname=bro-elasticsearch
-pkgver=2.4.1
+pkgver=2.4.elastic
 pkgrel=0
 pkgdesc="bro ids 2.4.1 with elasticsearch plugin"
 url="http://bro.org"
@@ -12,12 +12,11 @@ depends_dev="bash swig git perl cmake make zlib-dev openssl-dev flex bison pytho
 makedepends="$depends_dev"
 install=""
 subpackages="$pkgname-dev $pkgname-doc"
-source="https://www.bro.org/downloads/bro-$pkgver.tar.gz bro-musl.patch binpac-musl.patch FindFTS.cmake bro-2.4.1.patch"
+source="bro-2.4.elastic.tar.gz bro-musl.patch binpac-musl.patch FindFTS.cmake bro-2.4.1.patch"
 builddir="$srcdir/bro-$pkgver"
 
 prepare() {
 	cd "$builddir"
-	patch -p1 < $srcdir/bro-2.4.1.patch
 	for x in  $(grep -l -r -e "__off64_t" *); do sed -i "s/__off64_t/off64_t/g" $x; done
         for x in  $(grep -l -r -e " u_char " *); do sed -i "s/ u_char / unsigned char /g" $x; done
         for x in  $(grep -l -r -e "u_int32_t" *); do sed -i "s/u_int32_t/uint32_t/g" $x; done

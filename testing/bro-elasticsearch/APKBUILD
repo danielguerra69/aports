@@ -1,6 +1,6 @@
 # Contributor: Daniel Guerra <daniel.guerra69@gmail.com>
 # Maintainer:
-pkgname=bro-elasticsearch
+pkgname=bro
 pkgver=2.4.elastic
 pkgrel=0
 pkgdesc="bro ids 2.4.1 with elasticsearch plugin"
@@ -34,7 +34,7 @@ build() {
   ./configure --prefix=/usr --disable-broker || return 1
 	make || return 1
 	cd "$builddir/aux/plugins/elasticsearch"
-	./configure --prefix=/usr --disable-broker || return 1
+	./configure --prefix=/usr || return 1
 	make || return 1
 }
 

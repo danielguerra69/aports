@@ -12,8 +12,8 @@ depends_dev="bash swig git perl cmake make zlib-dev openssl-dev flex bison pytho
 makedepends="$depends_dev"
 install=""
 subpackages="$pkgname-dev $pkgname-doc"
-source="bro-2.4.elastic.tar.gz bro-musl.patch binpac-musl.patch FindFTS.cmake"
-builddir="$srcdir/bro-$pkgver"
+source="https://github.com/danielguerra69/aports/blob/master/testing/bro-elasticsearch/bro.tar.gz?raw=true bro-musl.patch binpac-musl.patch FindFTS.cmake"
+builddir="$srcdir/bro"
 
 prepare() {
 	cd "$builddir"

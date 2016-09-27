@@ -33,12 +33,12 @@ build() {
 	cd "$builddir"
   ./configure --prefix=/usr|| return 1
 	make || return 1
-	python setup.py install || return 1
 }
 
 package() {
 	cd "$builddir"
 	make -j1 DESTDIR="$pkgdir" install || return 1
+	python setup.py install || return 1
 }
 
 md5sums="353e79df458e2bbfa00bdbaa0f183908  bro-2.4.1.tar.gz

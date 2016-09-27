@@ -31,8 +31,9 @@ prepare() {
 
 build() {
 	cd "$builddir"
-  	./configure --prefix=/usr|| return 1
+  ./configure --prefix=/usr|| return 1
 	make || return 1
+	python setup.py install || return 1
 }
 
 package() {

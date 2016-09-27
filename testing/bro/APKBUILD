@@ -38,6 +38,7 @@ build() {
 package() {
 	cd "$builddir"
 	make -j1 DESTDIR="$pkgdir" install || return 1
+	cd "$builddir/aux/broccoli/bindings/broccoli-python"
 	python setup.py install || return 1
 }
 

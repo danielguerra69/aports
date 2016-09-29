@@ -1,7 +1,7 @@
 # Contributor: Jakub Jirutka <jakub@jirutka.cz>
 # Maintainer: Jakub Jirutka <jakub@jirutka.cz>
 pkgname=elasticsearch
-pkgver=2.3.5
+pkgver=2.4.1
 pkgrel=0
 pkgdesc="Open Source, Distributed, RESTful Search Engine"
 url="https://www.elastic.co/products/elasticsearch"

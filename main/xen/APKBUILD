@@ -3,7 +3,7 @@
 # Maintainer: William Pitcock <nenolod@dereferenced.org>
 pkgname=xen
 pkgver=4.7.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Xen hypervisor"
 url="http://www.xen.org/"
 arch="x86_64 armhf"
@@ -36,7 +36,11 @@ arm*)
 esac
 
 install=""
-subpackages="$pkgname-doc $pkgname-dev $pkgname-libs $pkgname-hypervisor"
+
+if [ "$CARCH" != "armhf" ]; then
+	subpackages="$pkgname-dbg"
+fi
+subpackages="$subpackages $pkgname-doc $pkgname-dev $pkgname-libs $pkgname-hypervisor"
 
 # grep _VERSION= stubdom/configure
 _ZLIB_VERSION="1.2.3"
@@ -116,6 +120,12 @@ source="http://bits.xensource.com/oss-xen/release/$pkgver/$pkgname-$pkgver.tar.g
 
 _builddir="$srcdir"/$pkgname-$pkgver
 _seabios=/usr/share/seabios/bios-256k.bin
+
+# Override wrong arch detection from xen-$pkgver/Config.mk.
+case "$CARCH" in
+armhf) export XEN_TARGET_ARCH="arm32";;
+esac
+
 prepare() {
 	local i _failed= _series=
 	cd "$_builddir"

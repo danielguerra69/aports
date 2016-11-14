@@ -4,13 +4,13 @@ _luaversions="5.1 5.2 5.3"
 pkgname=lua-cqueues
 _pkgname=cqueues
 pkgver=20160808
-pkgrel=0
+pkgrel=4
 pkgdesc="Lua event loop using coroutines"
 url="http://25thandclement.com/~william/projects/cqueues.html"
-arch="noarch"
+arch="all"
 license="MIT"
 depends=""
-makedepends="openssl-dev m4 bsd-compat-headers"
+makedepends="libressl-dev m4 bsd-compat-headers"
 subpackages=""
 for _i in $_luaversions; do
 	makedepends="$makedepends lua${_i}-dev"
@@ -38,7 +38,6 @@ package() {
 _package() {
 	local lver=${subpkgname:3:3}
 	pkgdesc="$pkgdesc - for Lua $lver"
-	arch="all"
 	depends="lua$lver"
 	install_if="lua$lver $pkgname=$pkgver-r$pkgrel"
 

@@ -6,13 +6,13 @@ pkgname=lua-ossl
 _pkgname=luaossl
 pkgver=20151221
 _ver=${pkgver%_git*}
-pkgrel=0
+pkgrel=1
 pkgdesc="A comprehensive OpenSSL Lua module"
 url="http://25thandclement.com/~william/projects/luaossl.html"
-arch="noarch"
+arch="all"
 license="MIT"
 depends=""
-makedepends="openssl-dev"
+makedepends="libressl-dev"
 subpackages=""
 for _v in $_luaversions; do
 	makedepends="$makedepends lua$_v-dev"
@@ -38,7 +38,6 @@ package() {
 _package() {
 	local lver="${subpkgname:3:3}"
 	pkgdesc="$pkgdesc for Lua $lver"
-	arch="all"
 	depends="lua$lver"
 	install_if="lua$lver $pkgname=$pkgver-r$pkgrel"
 
